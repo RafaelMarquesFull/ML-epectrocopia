@@ -1,0 +1,41 @@
+services:
+  leaky_relu:
+    build:
+      context: .
+      dockerfile: leaky_relu/Dockerfile
+    image: diabetes-leaky-relu
+    volumes:
+      - ./dataSets:/data:ro
+      - ./outputs/leaky_relu:/out
+  gelu:
+    build:
+      context: .
+      dockerfile: gelu/Dockerfile
+    image: diabetes-gelu
+    volumes:
+      - ./dataSets:/data:ro
+      - ./outputs/gelu:/out
+  swiglu:
+    build:
+      context: .
+      dockerfile: swiglu/Dockerfile
+    image: diabetes-swiglu
+    volumes:
+      - ./dataSets:/data:ro
+      - ./outputs/swiglu:/out
+  svm:
+    build:
+      context: .
+      dockerfile: svm/Dockerfile
+    image: diabetes-svm
+    volumes:
+      - ./dataSets:/data:ro
+      - ./outputs/svm:/out
+  cnn:
+    build:
+      context: .
+      dockerfile: cnn/Dockerfile
+    image: diabetes-cnn
+    volumes:
+      - ./dataSets:/data:ro
+      - ./outputs/cnn:/out
